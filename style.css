@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.section-1-wrapper
+{
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: #000;
+    overflow: hidden;
+    /* display: none; */
+}
+.section-1-wrapper .overlay
+{
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(1, 36, 68);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.overlay .circle
+{
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+    width: 80vh;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .1);
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.overlay span
+{
+    margin-left: 4rem;
+    font-size: 5rem;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+header
+{
+    position: relative;
+}
+nav
+{
+    margin-top: 1rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .logo
+{
+    color:seashell;
+    padding: 1rem 1.5rem;
+    background: crimson;
+    position: relative;
+    text-align: right;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+nav .logo:hover
+{
+    cursor: pointer;
+}
+nav ul
+{
+    display: flex;
+    margin-left: 20%;
+    margin-right: auto;
+}
+nav ul li 
+{
+    list-style: none;
+    margin-left: 4rem;
+    font-size: 1.2rem;
+}
+nav ul li a 
+{
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    transition: color .5s;
+}
+nav a:hover
+{
+    color: crimson;
+}
+nav ul li a::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    transition: .3s;
+}
+nav ul li a:hover:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: crimson;
+}
+nav ul li a::after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 5px;
+    width: 0;
+    transition: .3s;
+    transition-delay: .3s;
+}
+nav ul li a:hover::after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: crimson;
+}
+
+.main-wrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.main-content
+{
+    text-align: center;
+    margin-top: 10rem;
+    position: relative;
+}
+.mini-bar
+{
+    position: absolute;
+    background-color: crimson;
+    width: 10px;
+    height: 50%;
+    bottom: -.5rem;
+    /* display: none; */
+}
+.mini-bar:first-of-type
+{
+    left: -5rem;
+    animation: decrease_height 1s ease-in-out forwards;
+    animation-delay: 3s;
+}
+
+@keyframes decrease_height {
+    from{
+
+    }
+    to{
+        height: 1px;
+    }
+}
+
+.mini-bar:last-of-type
+{
+    right: -5rem;
+}
+.main-content h2
+{
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+.main-content h2 span
+{
+    color: rgb(248, 232, 8);
+}
+.main-content p
+{
+    line-height: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: crimson;
+    margin-bottom: .5rem;
+}
+.icons
+{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.icons svg
+{
+    margin: 3rem 0 ;
+    color: #333;
+    height: 1.5rem;
+    width: 1.5rem;
+    cursor: pointer;
+    transition: color .3s;
+}
+.icons svg:hover
+{
+    color: crimson;
+}
+.btn
+{
+    position: absolute;
+    bottom: 5%;
+    padding: 1rem 2rem;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(9, 53, 173);
+    border: none;
+    outline: none;
+    transition: border .1s, background-color .3s ;
+    cursor: pointer;
+}
+
+
+.section-2-wrapper
+{
+    position: relative;
+    padding: 1.5rem 0 0 1rem;
+    max-height: 100vh;
+    color: #fff;
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows:  repeat(3, 1fr);
+}
+.card
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.card:first-child h2
+{
+    font-size: 6rem;
+    color: #333;
+}
+.card:first-child h3
+{
+    font-size: 4rem;
+    font-weight: lighter;
+    color: #333;
+    text-transform: uppercase;
+}
+.card:first-child h4
+{
+    font-size: 4rem;
+    color: #555;
+}
+.card:nth-child(2),
+.card:nth-child(3)
+{
+    z-index: -1;
+    height: 30rem;
+    width: 30rem;
+    border-radius: 50%;
+    background-color: rgb(248, 232, 8);
+    padding: 1.5rem;
+}
+.card:nth-child(2) h3,
+.card:nth-child(3) h3
+{
+    color: #000;
+    font-size: 3rem;
+    margin-top: -4rem;
+    margin-bottom: 2rem;
+}
+.card:last-child
+{
+    height: 25rem;
+    width: 25rem;
+}
+.img
+{
+    position: absolute;
+    top: -20px;
+    background-color: rgb(85, 84, 70);
+    border-radius: 50%;
+}
+.img img
+{
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    opacity: .5;
+    transition: height .3s, width .3s, transform .8s;
+}
+.motivation
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(10%);
+}
+.motivation h3,
+.motivation h4
+{
+    color: #333;
+}
+.motivation h3
+{
+    font-size: 4rem;
+}
+.motivation h4
+{
+    font-size: 2rem;
+    font-weight: lighter;
+}
+.motivation h1
+{
+    font-size: 6rem;
+    color: rgb(248, 232, 8);
+}
+
+
+
+@media screen and (min-width: 300px) and (max-width: 784px) {
+    .main-content
+    {
+        overflow: hidden;
+    }
+    nav
+    {
+        flex-direction: column;
+    }
+    nav .logo
+    {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+        letter-spacing: 5px;
+        font-size: 2rem;
+        padding: 1.5rem 1rem;
+    }
+    nav ul
+    {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    nav ul li
+    {
+        margin-left: 2rem;
+    }
+    .icons
+    {
+        margin-left: 50%;   
+        margin-right: 55%; 
+    }
+    .icons svg
+    {
+        margin-left: 6rem;
+        height: 1.5rem;
+    width: 1.5rem;
+    }
+    .main-content h2
+    {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    .main-content h2:nth-child(2)
+    {
+        font-size: 2rem;
+    }
+
+    .main-content::before,
+    .main-content::after
+    {
+        visibility: hidden;
+    }
+
+    .btn
+    {
+        bottom: 2rem;
+    }
+}
+
+@media screen and (min-width: 784px) and (max-width: 1000px)
+{
+    .icons
+    {
+        margin-left: 50%;   
+        margin-right: 55%;   
+    }
+    .main-content h2
+    {
+        font-size: 2.4rem;
+    }
+    nav ul
+    {
+        border: 1px solid #fff;
+    }
+    .btn
+    {
+        bottom: 2rem;
+    }
+} 
+
+@media (max-height: 635px)
+{
+    .main-content
+    {
+        margin-top: 2rem;
+    }
+    .main-content h2
+    {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    .btn
+    {
+        bottom: 2rem;
+    }
+    .card:first-child
+    {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .motivation
+    {
+        grid-column-start: -3;
+        grid-column-end: -1;
+        transform: translateX(40%);
+    }
+    .card:nth-child(2),
+    .card:nth-child(3)
+    {
+        text-align: center;
+        height: 20rem;
+        width: 20rem;
+        padding: 1rem;
+        z-index: 5;
+        transform: translateX(50%);
+    }
+    .card:nth-child(2) h3,
+    .card:nth-child(3) h3
+    {
+    font-size: 2rem;
+    margin-top: -4rem;
+    margin-bottom: 2rem;
+    }
+    .img img
+    {
+        height: 20rem;
+        width: 20rem;
+    }
+    .section-2-wrapper .card:hover img
+    {
+        height: 80px;
+        width: 80px;
+    }
+    .section-2-wrapper .card:hover .img
+    {
+        transform: translateX(-8rem);
+    }
+}
