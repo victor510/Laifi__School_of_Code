@@ -18,41 +18,6 @@ body{
     overflow: hidden;
     /* display: none; */
 }
-.section-1-wrapper .overlay
-{
-    position: absolute;
-    min-height: 100vh;
-    width: 100%;
-    background-color: rgb(1, 36, 68);
-    z-index: 5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-}
-.overlay .circle
-{
-    position: absolute;
-    top: 50%;
-    left: -50%;
-    transform: translate(-50%, -50%);
-    height: 80vh;
-    width: 80vh;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, .1);
-    z-index: 10;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-.overlay span
-{
-    margin-left: 4rem;
-    font-size: 5rem;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
-
-}
 
 header
 {
@@ -103,49 +68,7 @@ nav a:hover
 {
     color: crimson;
 }
-nav ul li a::before
-{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 5px;
-    width: 0;
-    transition: .3s;
-}
-nav ul li a:hover:before
-{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    border-radius: 5px;
-    background-color: crimson;
-}
-nav ul li a::after
-{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 5px;
-    width: 0;
-    transition: .3s;
-    transition-delay: .3s;
-}
-nav ul li a:hover::after
-{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 3px;
-    width: 100%;
-    border-radius: 5px;
-    background-color: crimson;
-}
+
 
 .main-wrapper
 {
@@ -172,18 +95,8 @@ nav ul li a:hover::after
 .mini-bar:first-of-type
 {
     left: -5rem;
-    animation: decrease_height 1s ease-in-out forwards;
-    animation-delay: 3s;
 }
 
-@keyframes decrease_height {
-    from{
-
-    }
-    to{
-        height: 1px;
-    }
-}
 
 .mini-bar:last-of-type
 {
@@ -203,11 +116,10 @@ nav ul li a:hover::after
 .main-content p
 {
     line-height: 2rem;
-    font-weight: bold;
-    font-style: italic;
+    font-weight: 500;
     font-size: 20px;
     letter-spacing: 2px;
-    color: crimson;
+    color: #333;
     margin-bottom: .5rem;
 }
 .icons
@@ -237,17 +149,22 @@ nav ul li a:hover::after
 {
     position: absolute;
     bottom: 5%;
-    padding: 1rem 2rem;
+    left: 1rem;
+    max-width: 3.5rem;
+    padding: .5rem 1rem .5rem;
     font-size: 20px;
     font-weight: bold;
-    color: #fff;
-    background-color: rgb(9, 53, 173);
-    border: none;
+    color: rgb(240, 238, 238);
+    letter-spacing: 2px;
+    background-color: transparent;
+    border-top: 1px solid rgb(248, 232, 8);
+    border-left: 5px solid rgb(248, 232, 8);
+    border-bottom: 1px solid rgb(248, 232, 8);
+    border-right: none;
     outline: none;
     transition: border .1s, background-color .3s ;
     cursor: pointer;
 }
-
 
 .section-2-wrapper
 {
@@ -266,6 +183,16 @@ nav ul li a:hover::after
     align-items: center;
     justify-content: center;
     position: relative;
+}
+.card span
+{
+    color: #333;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.section-2-wrapper .card p
+{
+    color: #222;
 }
 .card:first-child h2
 {
@@ -302,6 +229,7 @@ nav ul li a:hover::after
     margin-top: -4rem;
     margin-bottom: 2rem;
 }
+.card:nth-child(2):hover
 .card:last-child
 {
     height: 25rem;
@@ -311,19 +239,20 @@ nav ul li a:hover::after
 {
     position: absolute;
     top: -20px;
-    background-color: rgb(85, 84, 70);
+    background-color: rgb(82, 1, 15);
     border-radius: 50%;
 }
 .img img
 {
-    height: 60px;
-    width: 60px;
+    height: 30rem;
+    width: 30rem;
     object-fit: cover;
     border-radius: 50%;
     display: block;
     opacity: .5;
     transition: height .3s, width .3s, transform .8s;
 }
+
 .motivation
 {
     display: flex;
@@ -350,7 +279,6 @@ nav ul li a:hover::after
     font-size: 6rem;
     color: rgb(248, 232, 8);
 }
-
 
 
 @media screen and (min-width: 300px) and (max-width: 784px) {
@@ -438,7 +366,7 @@ nav ul li a:hover::after
 {
     .main-content
     {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
     .main-content h2
     {
